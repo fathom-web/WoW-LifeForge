@@ -1,0 +1,11 @@
+.DS_Store
+*.swp
+*.swo
+*.bak
+__pycache__/
+*.pyc
+.vscode/
+.idea/
+dist/
+WTF/
+*.log

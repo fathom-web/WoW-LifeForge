@@ -1,0 +1,10 @@
+## Interface: 16001
+## Title: LifeForge |cffd6ad65- Your Legacy in Azeroth|r
+## Notes: Character history, goals, memories and adventures. By Novyx Forge.
+## Author: Novyx Forge
+## Version: 0.1.0-alpha
+## SavedVariables: LifeForgeDB
+Core\Init.lua
+Core\Tracking.lua
+Core\Backup.lua
+UI\Main.lua

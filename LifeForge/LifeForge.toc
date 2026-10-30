@@ -1,0 +1,28 @@
+## Interface: 16001
+## Title: LifeForge |cffe6bd79- Your Legacy in Azeroth|r
+## Notes: Your characters, journeys, companions and memories. Locally recorded.
+## Author: LifeForge
+## Version: 0.6.0-alpha
+## SavedVariables: LifeForgeDB
+Locales\enUS.lua
+Core\Bootstrap.lua
+Core\Util.lua
+Core\Database.lua
+Core\Events.lua
+Core\Character.lua
+Core\Chronicle.lua
+Core\Goals.lua
+Core\Memories.lua
+Core\Snapshots.lua
+Core\Tracking.lua
+Core\Social.lua
+Core\Guild.lua
+Core\Records.lua
+Core\Experience.lua
+Core\Backup.lua
+Core\Management.lua
+UI\ViewModel.lua
+UI\Main.lua
+UI\Experience.lua
+UI\BackupWindow.lua
+Core\Commands.lua

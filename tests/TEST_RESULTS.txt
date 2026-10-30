@@ -1,0 +1,307 @@
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+PASS Fresh boot creates per-character account database
+|cffe6bd79LifeForge|r: Level 13 Reached
+|cffe6bd79LifeForge|r: A New Horizon
+PASS Sessions, AFK, level, zone, money and time counters
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: Level 14 Reached
+|cffe6bd79LifeForge|r: Goal Complete: Hit 14
+|cffe6bd79LifeForge|r: A Letter From Your Past
+PASS Custom goals, notes, future letters and chronological facts
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: Your Adventure Began
+PASS Multiple character/realm scope and retirement
+PASS Social tracking counts only observed group overlap and can be erased
+PASS LF2 export serializes all account characters and roundtrips
+PASS Corrupted backup rejected before preview
+PASS Part validation rejects conflicting duplicate and bad input
+PASS Merge adds only new characters and does not sum conflicted stats
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+PASS Schema 1 alpha is migrated with archived original
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+PASS Database validation rejects invalid unsafe shapes
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+PASS Rapid reload resumes prior session without double counting
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+PASS Disabled tracking records no new gameplay time
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: Goal Complete: Keeper of Memories
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+|cffe6bd79LifeForge|r: A Memory Forged
+PASS Multiple backup chunks restore out of order
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+PASS Malformed event structure fails import validation
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+PASS Import cannot be committed without preview or user confirmation
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+|cffe6bd79LifeForge|r: 1 milestone notification(s) collected during combat
+|cffe6bd79LifeForge|r: Test Milestone
+PASS Notifications queued during combat and flushed on leaving
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+|cffe6bd79LifeForge|r: Notification goals on
+PASS UI/minimap/backup dialog smoke-test with mocked WoW frames
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+PASS Build 2 all 16 UI view models render from local data
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+|cffe6bd79LifeForge|r: A Memory Forged
+PASS Timeline and Vault search filter are literal and case-insensitive
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+|cffe6bd79LifeForge|r: Your Adventure Began
+PASS Account and realm character lists cannot invent unavailable alts
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+PASS UI renders honest snapshot and companion data
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+PASS Settings expose all granular notification toggles plus UI settings
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+|cffe6bd79LifeForge|r: Your Adventure Began
+PASS Selected alt uses its own character and realm scope
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+|cffe6bd79LifeForge|r: A Memory Forged
+PASS Favorite metrics reflect saved events and memories
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+PASS Build 3 party overlap persists session history and names
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+|cffe6bd79LifeForge|r: Legendary Bonds: 1h
+|cffe6bd79LifeForge|r: Legendary Bonds: 10h
+PASS Build 3 Legendary Bonds are based on observed hours and never duplicated
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+|cffe6bd79LifeForge|r: The Last Adventure — Reunited
+PASS Build 3 social events cannot claim unobserved reunions
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+PASS Build 3 combat roster uncertainty pauses measurements and safely resumes
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+|cffe6bd79LifeForge|r: A Memory Forged
+PASS Build 3 bookmark stores known companions and forgetting erases future tracking
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+|cffe6bd79LifeForge|r: A New Guild Chapter
+|cffe6bd79LifeForge|r: A Guild Chapter Closes
+PASS Build 3 guild history is recorded only when membership is observable
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+|cffe6bd79LifeForge|r: Level 22 Reached
+PASS Build 3 records track peaks and longest completed active session
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+|cffe6bd79LifeForge|r: Level 13 Reached
+PASS Build 3 then-vs-now comparisons use historical saved facts
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+|cffe6bd79LifeForge|r: Level 20 Reached
+|cffe6bd79LifeForge|r: A Letter From Your Past
+PASS Build 3 sealed Future Self letter text is absent from search
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+|cffe6bd79LifeForge|r: A New Guild Chapter
+PASS Build 3 backup includes parties, guild changes and personal records
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+PASS Build 3 older schema-2 saves safely gain optional social extensions
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+PASS Build 3 corrupt added party/record fields reject export
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+|cffe6bd79LifeForge|r: Level 13 Reached
+PASS Build 3 Chronicle monthly chapters use recorded moments only
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+PASS Build 4 leap year calendar has 42 correctly aligned days
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+PASS Build 4 calendar uses actual recorded days/events and caps intensity
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+PASS Build 4 footprint combines observed zone time across local alts
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+|cffe6bd79LifeForge|r: A Memory Forged
+PASS Build 4 museum contains only real favorites and respects scope
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+PASS Build 4 monthly Wrapped cannot infer prior companions or zone hours
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+|cffe6bd79LifeForge|r: A Memory Forged
+PASS Build 4 uses unchanged schema-2 and LF2 backup for favorites and daily stats
+|cffe6bd79LifeForge|r: Your Adventure Began
+|cffe6bd79LifeForge|r: A New Horizon
+|cffe6bd79LifeForge|r: Build 4 initialized. Type /lifeforge
+PASS Build 4 renders all four native UI panels in a mocked frame tree
+
+45 / 45 Lua tests passed.
