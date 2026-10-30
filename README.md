@@ -10,7 +10,7 @@ One standalone **in-game addon** for World of Warcraft: Forever. Build 7 keeps t
 
 1. **One product:** LifeForge, native WoW Lua UI; no companion app, no website account.
 2. **Feature work:** Developed here in the ChatGPT project.
-3. **GitHub:** Source code, changes, tests and history. This source ZIP is repository-ready; **nothing was pushed**.
+3. **GitHub:** Source code, changes, tests and history. The latest Build 7 source is committed to `main`; CI produces the versioned install-only ZIP as an artifact.
 4. **CurseForge:** The *only* public distribution/update service, after in-client acceptance.
 5. **Novyx Forge:** Only brand/marketing/showcase, not a download/update host.
 
