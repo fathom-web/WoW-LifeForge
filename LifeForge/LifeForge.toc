@@ -2,7 +2,7 @@
 ## Title: LifeForge |cffe6bd79- Your Legacy in Azeroth|r
 ## Notes: Your characters, journeys, companions and memories. Locally recorded.
 ## Author: LifeForge
-## Version: 0.6.0-alpha
+## Version: 0.7.0-alpha
 ## SavedVariables: LifeForgeDB
 Locales\enUS.lua
 Core\Bootstrap.lua

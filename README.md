@@ -1,10 +1,10 @@
-# LifeForge Complete — Build 5 (`0.6.0-alpha`)
+# LifeForge Complete — Build 6 (`0.7.0-alpha`)
 
 **Your Character. Your Journey. Your Legend.**
 
-One standalone **in-game addon** for World of Warcraft: Forever. Build 5 keeps the entire 31-area public-v1.0 product scope and expands the actual functions behind the existing 16-tab dark/gold Hybrid interface.
+One standalone **in-game addon** for World of Warcraft: Forever. Build 6 keeps the entire 31-area public-v1.0 product scope and expands the actual functions behind the existing 16-tab dark/gold Hybrid interface.
 
-> **Pre-launch alpha — 29 October 2026. NOT game-client validated.** Interface `16001` is provisional until checked against the final Forever release. This is not a public `1.0` and must not be described as complete, CurseForge-approved, or proven to work in WoW.
+> **Unverified client alpha — 30 October 2026. NOT game-client validated.** Interface `16001` is provisional until checked against the final Forever release. This is not a public `1.0` and must not be described as complete, CurseForge-approved, or proven to work in WoW.
 
 ## Development and distribution
 
@@ -14,7 +14,15 @@ One standalone **in-game addon** for World of Warcraft: Forever. Build 5 keeps t
 4. **CurseForge:** The *only* public distribution/update service, after in-client acceptance.
 5. **Novyx Forge:** Only brand/marketing/showcase, not a download/update host.
 
-## What Build 5 adds
+## What Build 6 adds
+
+- **Future Self Letters:** all three trigger types in-game: `level:60`, `hours:100`, `date:2027-01-01`. Date input is calendar-validated, and old timestamp-based letters remain readable. Multiline memory/letter editor now has extra space.
+- **Family Legacy:** shows the earliest tracked character, most-played hero, combined level totals, realms, archived count, and real saved memories (only for characters actually logged in).
+- **Backup UX:** number of imported parts displayed accurately; existing safe preview, merge, replace and confirmation behavior retained.
+- **Safety:** notification command respects a staged restore/read-only database. Existing data schema 2 remains unchanged.
+- **Tests:** 64 headless Lua tests; synthetic large history + backup roundtrip passes.
+
+## What Build 5 added
 
 - **Legacy Goals:** All six supported types can be created and edited in-game (level, tracked time in seconds, zones, notes, companions, gold in copper). Right-click removal is confirmation gated; edited presets remain edited across relogins.
 - **Character Retirement:** Right-click a character in the Characters tab to archive or restore it. Records are not deleted and archived characters remain browsable.
@@ -40,7 +48,7 @@ python3 tests/check_manifest.py    # manifest file resolution
 python3 scripts/package.py         # build addon-only zip in dist/
 ```
 
-**Result at build time:** 60/60 headless Lua tests, 22/22 manifest entries, and a synthetic history/back-up test (3,000 events, 500 notes, 500 sessions, 600 group records, 100 companions, 360 days). These do **not** prove visual appearance, FPS, API event behavior, `/reload` persistence, or any other actual game-client operation.
+**Result at build time:** 64/64 headless Lua tests, 22/22 manifest entries, and a synthetic history/back-up test (3,000 events, 500 notes, 500 sessions, 600 group records, 100 companions, 360 days). These do **not** prove visual appearance, FPS, API event behavior, `/reload` persistence, or any other actual game-client operation.
 
 ## Install for development testing once Forever is available
 

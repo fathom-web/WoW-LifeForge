@@ -16,7 +16,7 @@ function LF:Boot(identity)
     self:Log("Your locally stored Chronicle begins now. LifeForge does not recover pre-installation history. Settings: /lf settings")
     self.db.meta.introductionShown=true
   end
-  self:Log("Build 5 initialized. Type /lifeforge")
+  self:Log("Build 6 initialized. Type /lifeforge")
   return true
 end
 function LF:Command(message)
@@ -39,6 +39,7 @@ function LF:Command(message)
     self:Log(cmd.." "..flag);return
   end
   if cmd=="notifications" then
+    if self.runtime.readOnly or self.runtime.restorePending then self:Log("Database locked");return end
     local category,flag=rest:match("^(%S+)%s+(%S+)$")
     if not category or not self.db.settings.notifications[category] and self.db.settings.notifications[category]~=false then
       self:Log("Unknown category. Try special, levels, zones, goals, memories, companions, sessions, guild, records");return
@@ -58,8 +59,10 @@ function LF:Command(message)
     self:Log(ok and "Memory added" or tostring(reason));return
   end
   if cmd=="letter" then
-    local title,body,kind,target=rest:match("^(.-)%s*|%s*(.-)%s*|%s*(%S+)%s*|%s*(%d+)$")
-    local ok,reason=self:AddFutureLetter(title,body,kind,tonumber(target))
+    local title,body,condition=rest:match("^(.-)%s*|%s*(.-)%s*|%s*(.-)%s*$")
+    local valid,kind,target=self:ParseLetterTrigger(condition)
+    if not valid then self:Log(kind);return end
+    local ok,reason=self:AddFutureLetter(title,body,kind,target)
     self:Log(ok and "Future letter sealed" or tostring(reason));return
   end
   if cmd=="goal" then
@@ -75,7 +78,7 @@ function LF:Command(message)
   end
   if cmd=="help" then
     self:Log("/lf [overview|characters|chronicle|timeline|statistics|companions|goals|vault|museum|footprint|calendar|capsules|wrapped|guild|records|settings|backup]")
-    self:Log("/lf bookmark; /lf note Title | Body; /lf goal Name | level | 60; /lf letter Title | Body | level | 60")
+    self:Log("/lf bookmark; /lf note Title | Body; /lf goal Name | level | 60; /lf letter Title | Body | level:60 (or hours:100 / date:2027-01-01)")
     self:Log("/lf tracking on|off; /lf social on|off; /lf notifications [category] on|off; /lf diagnostics")
     return
   end

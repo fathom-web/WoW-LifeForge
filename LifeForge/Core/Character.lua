@@ -68,6 +68,30 @@ function LF:Totals(scope, focusKey)
   end
   return total
 end
+function LF:FamilyLegacy(scope,focusKey)
+  local keys=self:GetKeys(scope or "account",focusKey)
+  local family={characters=0,active=0,first=nil,mostPlayed=nil,archived=0,
+    realms={},combinedLevels=0,memories=0}
+  for _,key in ipairs(keys) do
+    local c=self.db.characters[key]
+    if c then
+      family.characters=family.characters+1
+      family.active=family.active+(c.stats.active or 0)
+      family.combinedLevels=family.combinedLevels+(c.level or 1)
+      family.memories=family.memories+#(c.notes or {})
+      if c.retired then family.archived=family.archived+1 end
+      family.realms[c.realm or "Unknown"]=true
+      if not family.first or (c.created or 0)<(family.first.created or 0) then
+        family.first={key=key,name=c.name,realm=c.realm,created=c.created}
+      end
+      if not family.mostPlayed or (c.stats.active or 0)>family.mostPlayed.active then
+        family.mostPlayed={key=key,name=c.name,realm=c.realm,active=c.stats.active or 0}
+      end
+    end
+  end
+  family.realmCount=self:Count(family.realms)
+  return family
+end
 function LF:SetRetired(key,value)
   if self.runtime.readOnly or self.runtime.restorePending then return false,"Database locked" end
   if not self.db.characters[key] then return false,"Unknown character" end

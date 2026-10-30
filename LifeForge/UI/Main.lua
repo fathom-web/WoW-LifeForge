@@ -60,26 +60,26 @@ local function showDialog(title,fields,onSave,confirmLabel)
   local dlg=controls.dialog
   if not dlg then
     dlg=CreateFrame('Frame','LifeForgeEditorDialog',UIParent,'BackdropTemplate')
-    dlg:SetSize(620,350);dlg:SetPoint('CENTER');dlg:SetFrameStrata('DIALOG')
+    dlg:SetSize(620,440);dlg:SetPoint('CENTER');dlg:SetFrameStrata('DIALOG')
     if type(_G.UISpecialFrames)=='table' then table.insert(_G.UISpecialFrames,'LifeForgeEditorDialog') end
     dlg:SetBackdrop({bgFile='Interface\\DialogFrame\\UI-DialogBox-Background',
       edgeFile='Interface\\DialogFrame\\UI-DialogBox-Border',tile=true,tileSize=32,edgeSize=24,
       insets={left=10,right=10,top=10,bottom=10}})
     dlg.header=label(dlg,30,-22,545,35,'',true,accent)
-    dlg.message=label(dlg,30,-278,545,24,'',false,muted)
-    dlg.inputA=safeEdit(dlg,42,-90,525,30,false)
-    dlg.inputB=safeEdit(dlg,42,-172,525,30,false)
-    dlg.inputC=safeEdit(dlg,42,-237,525,30,false)
-    dlg.captionA=label(dlg,30,-60,550,20,'Title',false,pale)
-    dlg.captionB=label(dlg,30,-142,550,20,'Description',false,pale)
-    dlg.captionC=label(dlg,30,-207,550,20,'Unlock',false,pale)
-    dlg.save=button(dlg,318,-310,160,28,'Save',function()
+    dlg.message=label(dlg,30,-365,545,32,'',false,muted)
+    dlg.inputA=safeEdit(dlg,42,-88,525,30,false)
+    dlg.inputB=safeEdit(dlg,42,-162,525,100,true)
+    dlg.inputC=safeEdit(dlg,42,-310,525,30,false)
+    dlg.captionA=label(dlg,30,-58,550,20,'Title',false,pale)
+    dlg.captionB=label(dlg,30,-135,550,20,'Description',false,pale)
+    dlg.captionC=label(dlg,30,-281,550,20,'Unlock',false,pale)
+    dlg.save=button(dlg,318,-400,160,28,'Save',function()
       local a=LF:Trim(dlg.inputA:GetText());local b=LF:Trim(dlg.inputB:GetText())
       local c=LF:Trim(dlg.inputC:GetText())
       local ok,msg=dlg.onSave(a,b,c)
       if ok then hideDialog();LF:Refresh() else dlg.message:SetText(tostring(msg or 'Unable to save')) end
     end)
-    button(dlg,488,-310,98,28,'Cancel',hideDialog)
+    button(dlg,488,-400,98,28,'Cancel',hideDialog)
     dlg:SetMovable(true);dlg:EnableMouse(true)
     controls.dialog=dlg
   end
@@ -252,8 +252,12 @@ local function action()
       help='Save a personal guild memory. Current guild is recorded if exposed by the game.'},
       function(a,b,c) return LF:AddNote(a,b,c) end,'Save Guild Memory')
   elseif currentTab=='capsules' then
-    showDialog('LETTER TO YOUR FUTURE SELF',{captionA='Title',captionB='Letter text',captionC='Open when reaching level',a='',b='',c=tostring((LF.char.level or 1)+10),help='The letter stays sealed until the chosen level.'},
-      function(a,b,c) return LF:AddFutureLetter(a,b,'level',tonumber(c)) end,'Seal Letter')
+    showDialog('LETTER TO YOUR FUTURE SELF',{captionA='Title',captionB='Letter text',captionC='Unlock trigger (level:60 | hours:100 | date:2027-01-01)',a='',b='',c='level:'..tostring((LF.char.level or 1)+10),help='Choose a FUTURE target. Hours means active tracked hours; date uses your local calendar.'},
+      function(a,b,c)
+        local ok,kind,target=LF:ParseLetterTrigger(c)
+        if not ok then return false,kind end
+        return LF:AddFutureLetter(a,b,kind,target)
+      end,'Seal Letter')
   elseif currentTab=='goals' then
     showDialog('FORGE A NEW GOAL',{captionA='Goal title',captionB='Target (number)',captionC='Kind: level, time (seconds), zones, notes, companions, gold (copper)',
       a='',b='60',c='level',help='For time, enter seconds; for gold, enter copper (10000 = 1g).'},

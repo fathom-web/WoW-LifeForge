@@ -2,7 +2,7 @@ local addonName, ns = ...
 ns = ns or {}
 _G.LifeForge = ns
 ns.name = addonName or "LifeForge"
-ns.version = "0.6.0-alpha"
+ns.version = "0.7.0-alpha"
 ns.schema = 2
 ns.config = { MAX_EVENTS=6000, MAX_NOTES=1500, MAX_SESSIONS=600, MAX_DAYS=5000,
   MAX_COMPANIONS=1500, MAX_SNAPSHOTS=360, MAX_PARTIES=300, MAX_GROUP_HISTORY=800, MAX_GUILD_HISTORY=300, TICK=5, MAX_TICK=30, SESSION_REJOIN=120 }

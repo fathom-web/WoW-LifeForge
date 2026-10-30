@@ -1,4 +1,4 @@
-# LifeForge v1.0 — Full feature matrix (Build 5 review)
+# LifeForge v1.0 — Full feature matrix (Build 6 review)
 
 **Important:** Working alpha means functional code and headless tests, **not** release approval. Every row remains part of public v1.0. Real Forever client verification and manual usability review are still required.
 
@@ -10,7 +10,7 @@
 | 4 | Life Statistics | Working alpha | Client event correctness and timer drift |
 | 5 | Adventure Timeline | Working alpha | Long-save paging/filter usability |
 | 6 | The Chronicle | Working alpha, expanded | Story polish and narrative UX |
-| 7 | Legacy Vault/Notes | Working alpha, expanded | Multiline editor and user acceptance |
+| 7 | Legacy Vault/Notes | Working alpha, multiline editor | On-client font/text scrolling acceptance |
 | 8 | Legacy Goals | Working alpha, expanded | Six-kind editor behavior and timing in WoW |
 | 9 | Adventure Companions | Working alpha | Real party/raid roster events and privacy |
 | 10 | Smart Milestones | Partial | More supported thresholds and tier governance |
@@ -21,9 +21,9 @@
 | 15 | Legendary Bonds | Working alpha | Observed overlap actual in-game |
 | 16 | Azeroth Footprint | Partial — zone atlas only | Real verified map API/coordinates; no fake markers |
 | 17 | Memory Museum | Working alpha | Gallery game-client visuals |
-| 18 | Future Self Letters | Partial | In-game trigger editor for time/date; level editor exists |
+| 18 | Future Self Letters | Working alpha: level/hours/date editor | In-game timezone and editor acceptance |
 | 19 | Personal Records & Firsts | Working alpha, expanded | Verify real firsts and record semantics |
-| 20 | Family Legacy | Partial | Richer cross-character storytelling/presentation |
+| 20 | Family Legacy | Working alpha: multi-character summary | Validate account/realm SavedVariables with real alts |
 | 21 | The Last Adventure | Working alpha | Absence/reunion live event verification |
 | 22 | Time Capsules | Working alpha | Archives from long-lived data |
 | 23 | Adventure Party | Working alpha | Nicknames, events, roster conditions in client |

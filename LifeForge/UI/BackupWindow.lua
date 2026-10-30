@@ -52,8 +52,13 @@ function LF:ShowBackup()
     end)
     btn(f,"Accept Part",375,-326,115,function()
       local ok,message=LF:AcceptPart(importBatch,LF:Trim(edit:GetText()))
-      note:SetText(ok and message or ("Rejected: "..message))
-      if ok then edit:SetText("") end
+      if ok then
+        local accepted=0
+        for _ in pairs(importBatch.pieces or {}) do accepted=accepted+1 end
+        local total=importBatch.total or '?'
+        note:SetText("Accepted "..accepted.." / "..tostring(total).." parts. "..tostring(message or ''))
+        edit:SetText("")
+      else note:SetText("Rejected: "..tostring(message)) end
     end)
     btn(f,"New Import",500,-326,110,function()
       importBatch=LF:NewImport();edit:SetText("");note:SetText("New import started. Paste part 1.")

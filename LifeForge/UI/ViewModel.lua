@@ -53,7 +53,15 @@ function LF:BuildView(tab,scope,selectedKey,query)
     v.action='bookmark'
   elseif tab=='characters' then
     v.title='THE FAMILY LEGACY';v.summary='Browse registered characters; right-click to archive/restore without deleting their history.'
-    v.metrics={{'REGISTERED',totals.characters},{'TRACKED TIME',fmt(totals.active)},{'REALM',scope},{'LOCAL DATA','ONLY'}}
+    local family=self:FamilyLegacy(scope,selectedKey or self.key)
+    v.metrics={{'REGISTERED',family.characters},{'TRACKED TIME',fmt(family.active)},{'REALMS',family.realmCount},{'ARCHIVED',family.archived}}
+    if family.first then
+      add(v,'THE FIRST CHAPTER',family.first.name..' of '..family.first.realm..'  ·  First tracked '..timeFmt(family.first.created),'fact')
+    end
+    if family.mostPlayed then
+      add(v,'YOUR MOST PLAYED HERO',family.mostPlayed.name..'  ·  '..fmt(family.mostPlayed.active)..' tracked','fact')
+    end
+    add(v,'THE FAMILY TOTAL',tostring(family.combinedLevels)..' combined character levels  ·  '..tostring(family.memories)..' saved memories','fact')
     for _,k in ipairs(self:GetKeys(scope,selectedKey or self.key)) do
       local d=self.db.characters[k]
       add(v,d.name..(d.retired and '  [Archived]' or ''),d.realm..'  ·  '..(d.class or 'Class unknown')..'  ·  Level '..tostring(d.level)..'  ·  '..fmt(d.stats.active),'character',k)
@@ -134,7 +142,7 @@ function LF:BuildView(tab,scope,selectedKey,query)
       for i=#c.letters,1,-1 do
         local l=c.letters[i]
         if matches(l.title,l.opened and l.body or '') then
-          add(v,(l.opened and '✉  ' or '🔒  ')..l.title,l.opened and ('Unsealed '..timeFmt(l.opened)) or ('Sealed until '..l.kind..' '..tostring(l.target)),'letter',l.id)
+          add(v,(l.opened and '✉  ' or '🔒  ')..l.title,l.opened and ('Unsealed '..timeFmt(l.opened)) or ('Sealed until '..self:LetterTriggerLabel(l)),'letter',l.id)
         end
       end
     end
@@ -162,7 +170,7 @@ function LF:BuildView(tab,scope,selectedKey,query)
     end
     for _,letter in ipairs(c.letters) do
       add(v,letter.opened and ('UNSEALED: '..letter.title) or ('SEALED: '..letter.title),
-        letter.opened and 'Letter delivered from your past' or ('Unlock at '..letter.kind..' '..tostring(letter.target)), 'letter',letter.id)
+        letter.opened and 'Letter delivered from your past' or ('Unlock at '..self:LetterTriggerLabel(letter)), 'letter',letter.id)
     end
     v.action='letter'
   elseif tab=='wrapped' then
