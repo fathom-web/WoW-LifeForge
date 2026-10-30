@@ -1,3 +1,12 @@
+# LifeForge Changelog
+
+## 0.8.0-alpha — Build 7 (30 Oct 2026)
+- 25 deduplicated smart milestones, grounded in tracked data.
+- Safe optional C_Map evidence capture; paginated Azeroth zone atlas.
+- English locale lookup with fallback and selected in-game UI strings.
+- Client compatibility hardening, 67 headless tests, full stress/backups.
+- GitHub Actions creates versioned addon artifact; CurseForge not published.
+
 # LifeForge changelog
 
 ## 0.6.0-alpha — 29 October 2026

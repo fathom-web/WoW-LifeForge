@@ -33,7 +33,7 @@ function LF:BuildExperienceUI(parent,selectRow)
   if self.experienceFrame then return self.experienceFrame end
   local root=CreateFrame('Frame',nil,parent)
   root:SetSize(680,285);root:SetPoint('TOPLEFT',parent,'TOPLEFT',225,-297)
-  local frames={};local navigation={calendarShift=0,wrappedIndex=1,museumPage=1,selectedDay=nil}
+  local frames={};local navigation={calendarShift=0,wrappedIndex=1,museumPage=1,atlasPage=1,selectedDay=nil}
   local function frame(name)
     local f=CreateFrame('Frame',nil,root);f:SetAllPoints(root);f:Hide();frames[name]=f;return f
   end
@@ -57,7 +57,9 @@ function LF:BuildExperienceUI(parent,selectRow)
   end
   local calInfo=text(cal,12,-248,645,24,'',false)
   local fp=frame('footprint')
-  local fpHeading=text(fp,10,-1,655,30,'ZONE ATLAS  |  MOST VISITED PLACES',true)
+  local fpHeading=text(fp,10,-1,385,30,LF:L('atlasHeading')..'  |  TRACKED PLACES',true)
+  control(fp,418,-1,107,24,LF:L('prevZones'),function()navigation.atlasPage=math.max(1,navigation.atlasPage-1);root:Render()end)
+  control(fp,535,-1,111,24,LF:L('nextZones'),function()navigation.atlasPage=navigation.atlasPage+1;root:Render()end)
   local fpRows={}
   for i=1,8 do
     local y=-32-(i-1)*27
@@ -166,16 +168,19 @@ function LF:BuildExperienceUI(parent,selectRow)
       end
     elseif view=='footprint' then
       local data=LF:FootprintModel(self.scope,self.key)
-      fpHeading:SetText('ZONE ATLAS  ·  '..data.count..' TRACKED ZONES')
+      local pages=math.max(1,math.ceil(data.count/8))
+      navigation.atlasPage=math.min(navigation.atlasPage,pages)
+      fpHeading:SetText('ZONE ATLAS · '..data.count..' ZONES · '..navigation.atlasPage..'/'..pages)
       for i,item in ipairs(fpRows) do
-        local z=data.zones[i]
+        local z=data.zones[(navigation.atlasPage-1)*8+i]
         item.holder:SetShown(z~=nil)
         if z then
           item.zone:SetText(clip(z.name,34));item.bar:SetWidth(math.max(1,245*z.ratio))
-          item.value:SetText(fmt(z.seconds))
+          local observed=z.mapID and (' ID '..tostring(z.mapID)) or ''
+          item.value:SetText(fmt(z.seconds)..observed)
         end
       end
-      fpInfo:SetText(data.count>0 and 'Relative heat bars from observed zone time; map pins are not inferred.' or 'No zones observed yet. Explore Azeroth to grow your atlas.')
+      fpInfo:SetText(data.count>0 and LF:L('atlasInfo') or LF:L('atlasEmpty'))
     elseif view=='museum' then
       local data=LF:MuseumModel(self.scope,self.key)
       local pages=math.max(1,math.ceil(data.total/6))

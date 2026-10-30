@@ -60,7 +60,7 @@ function LF:RecordLevel(level)
       c.daily[day]=c.daily[day] or {active=0,afk=0,sessions=0,levels=0}
       c.daily[day].levels=c.daily[day].levels+(level-previous)
       self:Emit("levels","Level "..level.." Reached","Recorded level progression.",true)
-      self:CheckGoals();self:UnlockLetters()
+      self:CheckGoals();self:CheckMilestones();self:UnlockLetters()
     end
   elseif level<c.level then
     -- Do not register a negative level-up after a character service or test realm change.
@@ -89,8 +89,9 @@ function LF:RecordZone(zone)
   if self:IsTracking() and not c.zones[zone] then
     c.zones[zone]={firstSeen=wall(),seconds=0}
     self:Emit("zones","A New Horizon","First tracked visit to "..zone..".",true)
-    self:CheckGoals()
+    self:CheckGoals();self:CheckMilestones()
   end
+  self:CaptureMapEvidence(zone)
 end
 function LF:Tick(seconds,afk)
   if not self.char or not self:IsTracking() or not self.char.openSession then return end
@@ -107,7 +108,7 @@ function LF:Tick(seconds,afk)
   self:RecordDaily(active,idle)
   if c.zone and c.zones[c.zone] then c.zones[c.zone].seconds=c.zones[c.zone].seconds+seconds end
   self:TickCompanions(seconds)
-  self:CheckGoals();self:UnlockLetters();self:MonthlySnapshot()
+  self:CheckGoals();self:CheckMilestones();self:UnlockLetters();self:MonthlySnapshot()
   -- UI refreshes are capped during long sessions; explicit actions still refresh immediately.
   local clock=self:Clock()
   if self.Refresh and (not self.runtime.lastLiveRefresh or clock<self.runtime.lastLiveRefresh or

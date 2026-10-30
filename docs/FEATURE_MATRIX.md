@@ -1,4 +1,4 @@
-# LifeForge v1.0 — Full feature matrix (Build 6 review)
+# LifeForge v1.0 — Full feature matrix (Build 7 review)
 
 **Important:** Working alpha means functional code and headless tests, **not** release approval. Every row remains part of public v1.0. Real Forever client verification and manual usability review are still required.
 
@@ -13,13 +13,13 @@
 | 7 | Legacy Vault/Notes | Working alpha, multiline editor | On-client font/text scrolling acceptance |
 | 8 | Legacy Goals | Working alpha, expanded | Six-kind editor behavior and timing in WoW |
 | 9 | Adventure Companions | Working alpha | Real party/raid roster events and privacy |
-| 10 | Smart Milestones | Partial | More supported thresholds and tier governance |
+| 10 | Smart Milestones | Tier engine implemented (alpha) | Verify tracking-derived unlocks and alerts in live client |
 | 11 | Session Intelligence | Working alpha, expanded | Timing/AFK semantics in client |
 | 12 | Legacy Wrapped | Working alpha | Seasonal visual polish and screenshot flow |
 | 13 | Backup & Restore | Working alpha | Multi-part large-save UI and actual disk persistence |
 | 14 | Settings/Privacy/Data Health | Working alpha, expanded | Manual accessibility/privacy audit |
 | 15 | Legendary Bonds | Working alpha | Observed overlap actual in-game |
-| 16 | Azeroth Footprint | Partial — zone atlas only | Real verified map API/coordinates; no fake markers |
+| 16 | Azeroth Footprint | Paginated zone atlas; guarded C_Map evidence capture (alpha) | Native world-map integration and coordinates must be validated live |
 | 17 | Memory Museum | Working alpha | Gallery game-client visuals |
 | 18 | Future Self Letters | Working alpha: level/hours/date editor | In-game timezone and editor acceptance |
 | 19 | Personal Records & Firsts | Working alpha, expanded | Verify real firsts and record semantics |
@@ -33,7 +33,7 @@
 | 27 | Character Retirement | Working alpha, expanded | Right-click workflow in actual client |
 | 28 | Legacy Calendar | Working alpha | Date/time locale and day interactions |
 | 29 | Smart Notifications | Working alpha | Combat-delayed notice behavior |
-| 30 | Localization | Partial — English scaffold | Extract all strings; optional translated languages |
+| 30 | Localization | English dictionary + fallback; key UI strings extracted | Remaining literal UI strings and translated languages |
 | 31 | Retention, Integrity & Performance | Working alpha, expanded | Long-run on-client soak/backup/benchmark |
 
 ## Release gate

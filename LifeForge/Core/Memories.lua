@@ -10,7 +10,7 @@ function LF:AddNote(title,body,category)
     zone=self:Text(c.zone or "",100),guild=self:Text(c.guild or "",150),companions=self:GetObservedCompanionKeys()}
   c.notes[#c.notes+1]=note
   self:Emit("memories","A Memory Forged",title,true)
-  self:CheckGoals()
+  self:CheckGoals();self:CheckMilestones()
   return true,note.id
 end
 function LF:FindNote(id)

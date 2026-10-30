@@ -100,8 +100,19 @@ function LF:FootprintModel(scope,key)
   for _,c in ipairs(chars(self,scope,key)) do
     for zone,z in pairs(c.zones or {}) do
       if type(zone)=='string' and type(z)=='table' then
-        local item=grouped[zone] or {name=zone,seconds=0,visits=0,firstSeen=nil,memories=0}
+        local item=grouped[zone] or {name=zone,seconds=0,visits=0,firstSeen=nil,memories=0,mapID=nil}
         item.seconds=item.seconds+math.max(0,tonumber(z.seconds) or 0)
+        -- Map coordinates are *observed samples* tied to a verified map ID.
+        if type(z.mapID)=='number' and z.mapID>0 then
+          if not item.mapID then
+            item.mapID=z.mapID;item.mapName=z.mapName;item.parentMapID=z.parentMapID
+          end
+          if item.mapID==z.mapID and type(z.sampleX)=='number' and type(z.sampleY)=='number'
+             and z.sampleX>=0 and z.sampleX<=1 and z.sampleY>=0 and z.sampleY<=1
+             and (not item.sampledAt or (z.sampledAt or 0)>item.sampledAt) then
+            item.sampleX=z.sampleX;item.sampleY=z.sampleY;item.sampledAt=z.sampledAt
+          end
+        end
         item.visits=item.visits+1 -- number of characters who recorded the zone, NOT travel visits
         if type(z.firstSeen)=='number' then
           item.firstSeen=math.min(item.firstSeen or z.firstSeen,z.firstSeen)
@@ -123,7 +134,7 @@ function LF:FootprintModel(scope,key)
     return a.seconds>b.seconds
   end)
   for _,z in ipairs(items) do z.ratio=maxSeconds>0 and z.seconds/maxSeconds or 0 end
-  return {zones=items,count=#items,maxSeconds=maxSeconds,mode='ZONE ATLAS',notice='Zone heat bars; precise map coordinates are not available from saved data.'}
+  return {zones=items,count=#items,maxSeconds=maxSeconds,mode='ZONE ATLAS',notice='Only map IDs/coordinates actually observed from C_Map are included. Never inferred from zone labels.'}
 end
 function LF:MuseumModel(scope,key)
   local items={}

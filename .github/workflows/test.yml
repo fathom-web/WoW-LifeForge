@@ -17,3 +17,10 @@ jobs:
         run: python3 tests/check_manifest.py
       - name: Package install-only addon ZIP
         run: python3 scripts/package.py
+      - name: Upload install-only addon ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: LifeForge-0.8.0-alpha-addon
+          path: dist/LifeForge_0.8.0-alpha_addon.zip
+          if-no-files-found: error
+          retention-days: 30

@@ -2,7 +2,7 @@
 local src="LifeForge/"
 local files={"Locales/enUS.lua","Core/Bootstrap.lua","Core/Util.lua","Core/Database.lua",
   "Core/Events.lua","Core/Character.lua","Core/Chronicle.lua","Core/Goals.lua",
-  "Core/Memories.lua","Core/Snapshots.lua","Core/Tracking.lua","Core/Social.lua","Core/Guild.lua","Core/Records.lua",
+  "Core/Milestones.lua","Core/Atlas.lua","Core/Memories.lua","Core/Snapshots.lua","Core/Tracking.lua","Core/Social.lua","Core/Guild.lua","Core/Records.lua",
   "Core/Backup.lua","Core/Management.lua","Core/Experience.lua","UI/ViewModel.lua","UI/Main.lua","UI/Experience.lua","UI/BackupWindow.lua","Core/Commands.lua"}
 local now=1793294000
 local zone="Durotar"
@@ -597,8 +597,7 @@ test("Build 3 bookmark stores known companions and forgetting erases future trac
   assertEq(#client.char.notes[1].companions,2)
   local partyId=client:Keys(client.char.parties)[1]
   assertEq(client:EraseCompanionEverywhere(key,false),false)
-  assertEq(client:EraseCompanionEverywhere(key,true),true)
-  assertEq(client.char.companions[key],nil)
+  assertEq(client:EraseCompanionEverywhere(key,true),true)  assertEq(client.char.companions[key],nil)
   assertEq(client.char.parties[partyId],nil)
   assertEq(#client.char.groupHistory,0)
   assertEq(#client.char.notes[1].companions,1)
@@ -1055,6 +1054,53 @@ test("Build 5 lightweight settings health counts and full validation are separat
   assertEq(light.valid,nil)
   assertEq(light.characters,1)
   assertEq(client:DataHealth(true).valid,true)
+end)
+
+test("Build 7 milestone tiers are deterministic and deduplicated",function()
+  local client=freshBuild3()
+  local c=client.char
+  c.milestones={};c.stats.active=11*3600;c.stats.levelUps=3
+  c.zones={['Durotar']={firstSeen=now,seconds=10},['The Barrens']={firstSeen=now,seconds=10},['Orgrimmar']={firstSeen=now,seconds=10},['Mulgore']={firstSeen=now,seconds=10},['Ashenvale']={firstSeen=now,seconds=10}}
+  local before=#c.events
+  client:CheckMilestones()
+  local gained=#c.events-before
+  assert(gained>=3)
+  assert(c.milestones['time-1'] and c.milestones['time-10'])
+  assert(c.milestones['zones-5'])
+  client:CheckMilestones()
+  assertEq(#c.events,before+gained)
+  assertEq(#client:MilestoneCatalog(c),25)
+end)
+
+test("Build 7 map evidence rejects absent API and invalid or secret coordinates",function()
+  local client=freshBuild3()
+  local old=_G.C_Map
+  _G.C_Map=nil
+  assertEq(client:MapEvidence(),nil)
+  _G.C_Map={GetBestMapForUnit=function()return 1411 end,
+    GetMapInfo=function()return {name='Durotar',parentMapID=1414} end,
+    GetPlayerMapPosition=function()return {GetXY=function()return .32,.62 end} end}
+  assertEq(client:CaptureMapEvidence('Durotar'),true)
+  local z=client.char.zones.Durotar
+  assertEq(z.mapID,1411);assertEq(z.sampleX,.32)
+  local model=client:FootprintModel('character');assert(model.zones[1].mapID)
+  _G.C_Map.GetPlayerMapPosition=function()return {GetXY=function()return -10,200 end} end
+  assertEq(client:CaptureMapEvidence('Durotar'),true)
+  assertEq(z.sampleX,.32) -- no fabricated/invalid coordinates overwrite trusted evidence
+  _G.C_Map.GetBestMapForUnit=function()error('secret value blocked')end
+  assertEq(client:CaptureMapEvidence('Durotar'),false)
+  _G.C_Map.GetBestMapForUnit=function()return 1411 end
+  _G.C_Map.GetPlayerMapPosition=function()return {GetXY=function()error('protected coordinate')end}end
+  assertEq(client:CaptureMapEvidence('Durotar'),true)
+  assertEq(z.sampleY,.62)
+  _G.C_Map=old
+end)
+
+test("Build 7 localization has safe English fallback",function()
+  local client=freshBuild3()
+  assertEq(client:L('title'),'LifeForge')
+  assertEq(client:L('someFutureKey'),'someFutureKey')
+  assertEq(client:L('atlasHeading'),'ZONE ATLAS')
 end)
 
 test("Build 5 mocked UI can open all sixteen tabs without runtime exceptions",function()

@@ -293,7 +293,7 @@ function LF:Refresh()
   end
   counter:SetShown(not rich)
   counter:SetText('PAGE '..page..' / '..pages..'   •   '..#model.rows..' ENTRIES')
-  footer:SetText('LIFEFORGE '..self.version..'   •   LOCAL SAVE DATA   •   '..(self.runtime.readOnly and 'READ ONLY' or 'ALPHA — NOT LIVE TESTED'))
+  footer:SetText('LIFEFORGE '..self.version..'   •   '..self:L('storedLocally')..'   •   '..(self.runtime.readOnly and self:L('readOnly') or self:L('alphaNotice')))
   controls.prev:SetShown(not rich)
   controls.next:SetShown(not rich)
   controls.searchLabel:SetShown(model.filterable==true and not rich)

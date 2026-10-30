@@ -86,6 +86,7 @@ function LF:UpdateGroup()
     end
   end
   activeMembers=roster;rosterPending=false
+  self:CheckMilestones()
 end
 function LF:TickCompanions(seconds)
   if not self.char or not self:IsTracking() or not self.db.settings.socialTracking or

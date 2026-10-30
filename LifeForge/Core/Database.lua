@@ -41,7 +41,7 @@ function LF:MigrateLegacy(db)
       c.notes=type(c.notes)=="table" and c.notes or {}
       c.goals=type(c.goals)=="table" and c.goals or {}
       c.zones=type(c.zones)=="table" and c.zones or {}
-      c.companions={};c.groupHistory={};c.guildHistory={};c.parties={};c.records={};c.daily={};c.snapshots={};c.letters={}
+      c.companions={};c.groupHistory={};c.guildHistory={};c.parties={};c.records={};c.daily={};c.snapshots={};c.letters={};c.milestones={}
       c.sessionHistory={};c.nextId=self:SafeInt(c.nextId,1,1);c.retired=false
       c.stats.goldEarned=0;c.stats.goldSpent=0
       -- Alpha had an open session but no reliable finalization; do not count invented duration.
@@ -95,10 +95,10 @@ function LF:NewCharacter(name,realm)
   return {name=name,realm=realm,created=ts,lastSeen=ts,level=1,gold=0,
     stats={active=0,afk=0,sessions=0,levelUps=0,goldDelta=0,goldEarned=0,goldSpent=0},
     events={},notes={},goals={},zones={},companions={},groupHistory={},guildHistory={},parties={},records={},
-    daily={},snapshots={},letters={},sessionHistory={},nextId=1,retired=false,openSession=nil}
+    daily={},snapshots={},letters={},milestones={},sessionHistory={},nextId=1,retired=false,openSession=nil}
 end
 function LF:NormalizeCharacter(c)
-  for _,k in ipairs({"events","notes","goals","zones","companions","groupHistory","guildHistory","parties","records","daily","snapshots","letters","sessionHistory"}) do
+  for _,k in ipairs({"events","notes","goals","zones","companions","groupHistory","guildHistory","parties","records","daily","snapshots","letters","milestones","sessionHistory"}) do
     if type(c[k])~="table" then c[k]={} end
   end
   if type(c.stats)~="table" then c.stats={} end

@@ -9,5 +9,5 @@ for raw in toc.splitlines():
         f=root/Path(raw.replace('\\','/'))
         assert f.is_file(), f'Missing TOC path: {f}'
         files.append(str(f))
-assert len(files)==22, len(files)
+assert len(files)==24, len(files)
 print('OK:',len(files),'addon files referenced by manifest')

@@ -1,8 +1,8 @@
-# LifeForge Complete — Build 6 (`0.7.0-alpha`)
+# LifeForge Complete — Build 7 (`0.8.0-alpha`)
 
 **Your Character. Your Journey. Your Legend.**
 
-One standalone **in-game addon** for World of Warcraft: Forever. Build 6 keeps the entire 31-area public-v1.0 product scope and expands the actual functions behind the existing 16-tab dark/gold Hybrid interface.
+One standalone **in-game addon** for World of Warcraft: Forever. Build 7 keeps the entire 31-area public-v1.0 product scope and expands the actual functions behind the existing 16-tab dark/gold Hybrid interface.
 
 > **Unverified client alpha — 30 October 2026. NOT game-client validated.** Interface `16001` is provisional until checked against the final Forever release. This is not a public `1.0` and must not be described as complete, CurseForge-approved, or proven to work in WoW.
 
@@ -13,6 +13,14 @@ One standalone **in-game addon** for World of Warcraft: Forever. Build 6 keeps t
 3. **GitHub:** Source code, changes, tests and history. This source ZIP is repository-ready; **nothing was pushed**.
 4. **CurseForge:** The *only* public distribution/update service, after in-client acceptance.
 5. **Novyx Forge:** Only brand/marketing/showcase, not a download/update host.
+
+## Build 7 — Pre-launch hardening
+
+- **Milestones:** 25 meaningful, replay-safe, recorded-time tiers across active play, discovered zones, memories, observed companions and level-ups.
+- **Atlas:** native paginated zone atlas; guarded, opt-in-by-availability `C_Map` evidence may attach genuine map IDs and observed positions. No guesses, map overlays or off-game storage.
+- **UI and locale:** English dictionary with safe fallback, selected headings extracted, 8-row atlas pagination with page controls.
+- **Packaging:** the authoritative install ZIP is built by GitHub Actions on each commit, available in the workflow's artifacts; `dist/` is generated, not source. No CurseForge publication.
+- **Testing:** 67 headless Lua tests + stress archive backup/restore; real client validation remains required.
 
 ## What Build 6 adds
 
@@ -48,7 +56,7 @@ python3 tests/check_manifest.py    # manifest file resolution
 python3 scripts/package.py         # build addon-only zip in dist/
 ```
 
-**Result at build time:** 64/64 headless Lua tests, 22/22 manifest entries, and a synthetic history/back-up test (3,000 events, 500 notes, 500 sessions, 600 group records, 100 companions, 360 days). These do **not** prove visual appearance, FPS, API event behavior, `/reload` persistence, or any other actual game-client operation.
+**Result at build time:** 67/67 headless Lua tests, 22/22 manifest entries, and a synthetic history/back-up test (3,000 events, 500 notes, 500 sessions, 600 group records, 100 companions, 360 days). These do **not** prove visual appearance, FPS, API event behavior, `/reload` persistence, or any other actual game-client operation.
 
 ## Install for development testing once Forever is available
 
