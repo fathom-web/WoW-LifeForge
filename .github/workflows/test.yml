@@ -1,0 +1,19 @@
+name: LifeForge Lua tests
+on:
+  push:
+  pull_request:
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Lua and tooling
+        run: sudo apt-get update && sudo apt-get install -y lua5.4
+      - name: Run Lua regression suite
+        run: lua5.4 tests/run.lua
+      - name: Run synthetic stress and LF2 restore checks
+        run: lua5.4 tests/stress.lua
+      - name: Verify addon manifest paths
+        run: python3 tests/check_manifest.py
+      - name: Package install-only addon ZIP
+        run: python3 scripts/package.py
