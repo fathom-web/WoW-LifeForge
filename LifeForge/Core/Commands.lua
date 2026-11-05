@@ -16,7 +16,7 @@ function LF:Boot(identity)
     self:Log("Your locally stored Chronicle begins now. LifeForge does not recover pre-installation history. Settings: /lf settings")
     self.db.meta.introductionShown=true
   end
-  self:Log("Build 7 initialized. Type /lifeforge")
+  self:Log("v"..self.version.." ready. Type /lifeforge")
   return true
 end
 function LF:Command(message)
