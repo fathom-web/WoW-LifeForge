@@ -11,7 +11,7 @@ ns.Locale = {
   atlasHeading='ZONE ATLAS',atlasEmpty='No zones observed yet. Explore Azeroth to grow your atlas.',
   atlasInfo='Recorded playtime, all pages. Map IDs are displayed only if returned by C_Map.',
   museumHeading='THE MEMORY MUSEUM',wrappedHeading='LEGACY WRAPPED',
-  storedLocally='LOCAL SAVE DATA',alphaNotice='ALPHA — NOT LIVE TESTED',
+  storedLocally='LOCAL SAVE DATA',releaseNotice='RELEASE 1.0',
   readOnly='READ ONLY', browse='Browsing', realm='Realm',
   prevZones='< ZONES',nextZones='ZONES >',
 }
