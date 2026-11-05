@@ -1,5 +1,19 @@
 # LifeForge Changelog
 
+## 1.0.0 — First Stable Release (5 November 2026)
+- First public release for World of Warcraft: Forever (interface 16001).
+- Native 16-tab dark/gold interface with minimap access and `/lifeforge` / `/lf` commands.
+- Local character and session tracking, Chronicle, timeline, statistics, milestone goals, memories, favorites and Future Self Letters.
+- Legacy Calendar, Azeroth Footprint zone atlas, Memory Museum, and Legacy Wrapped based on recorded data.
+- Adventure Companions, guild and party observations, records and legacy views.
+- LF2 backup and restore, conservative saved-data retention, and data diagnostics.
+- Improved client compatibility checks, paginated atlas, 25 deduplicated milestone tiers and English UI fallback.
+- Release versioning and packaged installation ZIP for CurseForge.
+
+**Note:** LifeForge begins tracking when installed. Existing character history cannot be reconstructed retroactively. The zone atlas is not a live world-map overlay. User data stays in local WoW SavedVariables. Not every advanced feature has been exhaustively tested in the live client.
+
+---
+
 ## 0.8.0-alpha — Build 7 (30 Oct 2026)
 - 25 deduplicated smart milestones, grounded in tracked data.
 - Safe optional C_Map evidence capture; paginated Azeroth zone atlas.
