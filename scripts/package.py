@@ -3,7 +3,7 @@ from pathlib import Path
 from zipfile import ZipFile, ZIP_DEFLATED
 root = Path(__file__).resolve().parents[1]
 addon = root / 'LifeForge'
-out = root / 'dist' / 'LifeForge_0.8.0-alpha_addon.zip'
+out = root / 'dist' / 'LifeForge_1.0.0.zip'
 out.parent.mkdir(exist_ok=True)
 with ZipFile(out, 'w', ZIP_DEFLATED) as z:
     for f in sorted(addon.rglob('*')):
