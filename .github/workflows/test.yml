@@ -20,7 +20,7 @@ jobs:
       - name: Upload install-only addon ZIP
         uses: actions/upload-artifact@v4
         with:
-          name: LifeForge-0.8.0-alpha-addon
-          path: dist/LifeForge_0.8.0-alpha_addon.zip
+          name: LifeForge-1.0.0-Release
+          path: dist/LifeForge_1.0.0.zip
           if-no-files-found: error
           retention-days: 30
