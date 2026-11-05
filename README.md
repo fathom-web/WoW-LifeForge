@@ -1,26 +1,26 @@
-# LifeForge Complete — Build 7 (`0.8.0-alpha`)
+# LifeForge — v1.0.0 Release
 
 **Your Character. Your Journey. Your Legend.**
 
 One standalone **in-game addon** for World of Warcraft: Forever. Build 7 keeps the entire 31-area public-v1.0 product scope and expands the actual functions behind the existing 16-tab dark/gold Hybrid interface.
 
-> **Unverified client alpha — 30 October 2026. NOT game-client validated.** Interface `16001` is provisional until checked against the final Forever release. This is not a public `1.0` and must not be described as complete, CurseForge-approved, or proven to work in WoW.
+> **Release notes (5 November 2026):** LifeForge has been launched successfully in WoW Forever by the maintainer. This does not imply every advanced feature has been exhaustively exercised. Interface `16001`; use cautious backups and report any in-client compatibility issues.
 
 ## Development and distribution
 
 1. **One product:** LifeForge, native WoW Lua UI; no companion app, no website account.
 2. **Feature work:** Developed here in the ChatGPT project.
 3. **GitHub:** Source code, changes, tests and history. The latest Build 7 source is committed to `main`; CI produces the versioned install-only ZIP as an artifact.
-4. **CurseForge:** The *only* public distribution/update service, after in-client acceptance.
+4. **CurseForge:** The *only* public distribution/update service. Upload the prepared v1.0.0 package as **Release**; public availability follows CurseForge approval.
 5. **Novyx Forge:** Only brand/marketing/showcase, not a download/update host.
 
-## Build 7 — Pre-launch hardening
+## Features and compatibility
 
 - **Milestones:** 25 meaningful, replay-safe, recorded-time tiers across active play, discovered zones, memories, observed companions and level-ups.
 - **Atlas:** native paginated zone atlas; guarded, opt-in-by-availability `C_Map` evidence may attach genuine map IDs and observed positions. No guesses, map overlays or off-game storage.
 - **UI and locale:** English dictionary with safe fallback, selected headings extracted, 8-row atlas pagination with page controls.
-- **Packaging:** the authoritative install ZIP is built by GitHub Actions on each commit, available in the workflow's artifacts; `dist/` is generated, not source. No CurseForge publication.
-- **Testing:** 67 headless Lua tests + stress archive backup/restore; real client validation remains required.
+- **Packaging:** the v1.0.0 install ZIP is built by GitHub Actions on each commit and can be uploaded to CurseForge after testing.
+- **Testing:** 67 headless Lua tests and synthetic stress archive/backup restores were run for the last feature build. The addon has since been launched in the live Forever client; feature-level client coverage is not yet exhaustive.
 
 ## What Build 6 adds
 
@@ -56,17 +56,17 @@ python3 tests/check_manifest.py    # manifest file resolution
 python3 scripts/package.py         # build addon-only zip in dist/
 ```
 
-**Result at build time:** 67/67 headless Lua tests, 22/22 manifest entries, and a synthetic history/back-up test (3,000 events, 500 notes, 500 sessions, 600 group records, 100 companions, 360 days). These do **not** prove visual appearance, FPS, API event behavior, `/reload` persistence, or any other actual game-client operation.
+**Result at build time:** 67/67 headless Lua tests, 22/22 manifest entries, and a synthetic history/back-up test (3,000 events, 500 notes, 500 sessions, 600 group records, 100 companions, 360 days). These headless tests alone do **not** prove FPS, all API events, or every game-client operation; ongoing feedback is encouraged.
 
-## Install for development testing once Forever is available
+## Installation
 
-Extract the *addon-only ZIP* to give this layout:
+Once approved, install using the CurseForge app. For manual installation, extract the *addon-only ZIP* to give this layout:
 
 ```text
 World of Warcraft/<Forever installation>/Interface/AddOns/LifeForge/LifeForge.toc
 ```
 
-The actual client folder name should be verified in your installation. Use `/lifeforge`, `/lf`, `/lf bookmark`, `/lf settings`, `/lf diagnostics`. Before upgrading or restoring anything, fully close WoW and back up the `WTF/Account/.../SavedVariables/LifeForge.lua` file from the correct installation/account. SavedVariables are local to that installation, **not cloud synced**.
+The client's installed folder name may vary. Use `/lifeforge`, `/lf`, `/lf bookmark`, `/lf settings`, `/lf diagnostics`. Before upgrading or restoring anything, fully close WoW and back up the `WTF/Account/.../SavedVariables/LifeForge.lua` file from the correct installation/account. SavedVariables are local to that installation, **not cloud synced**.
 
 ## Important constraints
 
@@ -75,7 +75,7 @@ The actual client folder name should be verified in your installation. Use `/lif
 - Character metadata and group information from game APIs remain provisional until tested in the actual release client.
 - Client textures, protected actions/combat behavior, scaling and UI accessibility are not certified by mocked-frame tests.
 - English UI is supported; a localization scaffold exists but full string extraction and translations are not complete.
-- This repository has **no chosen public source-code license**. Choose the license and verify Blizzard/CurseForge distribution terms before going public.
+- Source code rights remain with the author. CurseForge distribution of packaged addon files does not by itself grant a general public code-reuse license.
 
 ## Details
 
